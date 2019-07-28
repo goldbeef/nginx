@@ -17,13 +17,119 @@ webserver
 				代理服务器
 				反向代理
 				缓存
+					proxy_cache
+						反向代理 url缓存
+					fastcgi_cache
+						动态程序缓存
+					nginx_cache_purge
+						清除缓存
 				负载均衡
 					内置策略
-						
+						轮寻
+						加权轮寻
+						ip-hash
 					扩展策略
+						url-hash
+						fair
+						 最小负载
 				包过滤/ssl 
 			高级http
 				虚拟主机/重定向/网络监控/流媒体
 			邮件服务
 				imap/pop3/smtp
+nginx信号控制
+	SIG_TERM/SIG_INT
+		快速停止
+	SIG_QUIT 
+		平滑停止
+	SIG_HUP
+		加载配置文件/平滑重启
+	SIG_USR1
+		日志切割
+	SIG_USR2
+		平滑升级
+	SIG_WINCH
+		平滑升级
+nginx 
+	-h
+	-v
+		版本号
+	-V
+		获取详细的编译参数/配置变量
+nginx-stop
+	SIG_INT SIG_TERM 
+	SIG_QUIT 
+nginx-restart
+	SIG_HUP 
+
+nginx基础配置
+	全局块
+		user/group
+		worker-num
+		pid 
+		log
+		conf 
+	event 
+		网络链接相关
+		io模型
+	http块
+		代理/缓存/日志
+	server块
+		虚拟主机
+	location
+		url 
+nigx服务器架构
+	模块化结构
+		易于分布式开发/协同合作/扩展和升级
+	nginx模块
+		核心模块
+			主体功能
+				进程管理/权限控制/日志/配置
+			响应请求
+				事件驱动机制/正则解析
+		标准http模块
+		可选http模块
+		邮件服务模块
+		第三方模块
+			echo-nginx-module 
+			memc-nginx-module 
+			lua-nginx-module 
+	服务器进程模型
+		多进程/进程池
+			简单/独立
+			内存复制/性能差
+		多线程/线程池
+			开销小
+			不独立/同步互斥易出错
+		异步方式
+			通信模式
+				同步
+				异步
+			进程处理调用模式
+				阻塞
+				非阻塞
+	nginx进程模型
+		多进程
+			single-mode 
+			master-worker-mode 
+		异步非阻塞 
+	nginx事件驱动模型
+		事件驱动
+			事件采集
+			事件发送
+			事件处理
+		事件驱动处理库
+			select
+			poll
+			epoll
+			rtsig 
+				real-time-signal　排队
+				废弃了
+			kqueue
+				freebsd, mac os 
+			/dev/poll
+				solaris
+			eventport
+				solaris
+	
 		
