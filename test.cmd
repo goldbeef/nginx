@@ -1,0 +1,29 @@
+webserver
+	apache 
+		特性全/速度快/稳定
+		进程模型不是很好
+	MS-IIS(internet-inforamtion-service)
+		可靠性/安全性/功能强大
+		付费/部署成本高
+	tomcat
+		轻量级/开源/部署安装方便
+	lighttpd
+		高性能
+		功能不足/编码不完善
+	nginx
+		开发版/稳定版/过期版
+		功能
+			基本http
+				代理服务器
+				反向代理
+				缓存
+				负载均衡
+					内置策略
+						
+					扩展策略
+				包过滤/ssl 
+			高级http
+				虚拟主机/重定向/网络监控/流媒体
+			邮件服务
+				imap/pop3/smtp
+		
